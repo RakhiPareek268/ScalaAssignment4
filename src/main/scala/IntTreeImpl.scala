@@ -3,8 +3,8 @@ object IntTreeImpl {
   case object EmptyTree extends IntTree
   case class Node(element: Int, left: IntTree, right: IntTree) extends IntTree
 
-  def contains(tree: IntTree, v: Int): Boolean = {
-    tree match {
+  def contains(t: IntTree, v: Int): Boolean = {
+    t match {
       case EmptyTree => false
       case Node(element, left, right) if element< v  => contains(left, v)
       case Node(element, left, right) if element > v => contains(right, v)
